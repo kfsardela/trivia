@@ -1,0 +1,50 @@
+html{
+    background-color: #FFFF00;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#welcome{
+    text-align: center;
+    font-size: 14px;
+}
+
+#name{
+    font-weight: bold;
+}
+
+#corrects, #wrong{
+    border: 2px #000 solid;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    margin: 20px;
+    display: inline-table;
+}
+#answer{
+    text-align: center;
+}
+
+.correctAnswer{
+    color: #00FF00;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
+
+.wrongAnswer{
+    color: #FF0000;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
+#bye{
+    display: none;
+    text-align: center;
+}

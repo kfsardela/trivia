@@ -1,45 +1,66 @@
-var questionOne; // resposta certa 2
+var questionOne; // resposta certa 1
 var questionTwo; // resposta certa 2 
 var questionThree; // resposta certa 3
+var correctAnswer1 = 2;
+var correctAnswer2 = 2;
+var correctAnswer3 = 3;
+var correctAnswer = {
+    1:2,
+    2:2,
+    3:3
+};
+
+function validAnswer(question, answer){
+    
+    if(question == correctAnswer[answer]){
+        document.getElementById("correctAnswer"+answer).style.display = "block";
+    }else {
+        document.getElementById("wrongAnswer"+answer).style.display = "block";
+    }
+}
+
 
 var name = prompt("Coloque seu nome");
-var hi = ("Olá," + name);
-var bye = ("OK, Tchau tchau!")
 
+//imprimir no html o nome
+document.getElementById("name").innerHTML = name;
 
 var choice = prompt("Coloque o número correspondente à sua resposta: \n Quer iniciar o jogo? \n 1. Sim! \n 2. Não :( ");
-//criar condição caso a pessoa não queira jogar dps ela para prossguir
+
 if (choice == 2){
-    document.getElementById("bye").innerHTML = bye;
+    document.getElementById("bye").style.display = "block";
+    document.getElementById("welcome").style.display = "none";
+}
 
-} else if (choice == 1){
+if (choice == 1){
+
     questionOne = prompt("1 Coloque o número correspondente à sua resposta: \n Qual dessas cores não é primária? \n 1.vermelho \n 2. laranja \n 3. azul");
-
-    if ((questionOne != 1) && (questionOne != 2) && (questionOne != 3)) {
-        alert("Insira resposta válida1");
-        questionOne = prompt("Coloque o número correspondente à sua resposta: \n Qual dessas cores não é primária? \n 1.vermelho \n 2. laranja \n 3. azul");
-    
-    } else {
-        questionTwo = prompt("2 Coloque o número correspondente à sua resposta: \n Qual a cor do Laboratória? \n 1. roxo \n 2. amarelo \n 3. azul");      
-    
-    } 
-    if (questionTwo != 1 && questionTwo != 2 && questionTwo != 3) { 
-        alert("Insira resposta válida2");
-        questionTwo = prompt("Coloque o número correspondente à sua resposta: \n Qual a cor do Laboratória? \n 1. roxo \n 2. amarelo \n 3. azul");
-    
-    } else{
-        questionThree = prompt("Coloque o número correspondente à sua resposta: \n Qual a cor da mistura entre vermelho e azul? \n 1. verde \n 2. marrom \n 3. roxo");
-        
-    } 
-    if(questionThree != 1 && questionThree != 2 && questionThree != 3){
-        alert("Insira resposta válida3");
-        questionThree = prompt("Coloque o número correspondente à sua resposta: \n Qual a cor da mistura entre vermelho e azul? \n 1. verde \n 2. marrom \n 3. roxo");
-    }
-    
-}else {
-    alert("Insira resposta válida4");
+    questionTwo = prompt("2 Coloque o número correspondente à sua resposta: \n Qual a cor do Laboratória? \n 1. roxo \n 2. amarelo \n 3. azul");      
+    questionThree = prompt("3 Coloque o número correspondente à sua resposta: \n Qual a cor da mistura entre vermelho e azul? \n 1. verde \n 2. marrom \n 3. roxo");
 
 }
 
-//imprimir no html
-document.getElementById("nameid").innerHTML = hi;
+// Funcao
+validAnswer(questionOne, 1);
+validAnswer(questionTwo, 2);
+validAnswer(questionTwo, 3);
+
+/*
+if (questionOne == correctAnswer1) {
+    document.getElementById("correctAnswer1").style.display = "block";
+} else {
+    document.getElementById("wrongAnswer1").style.display = "block";
+}
+
+if (questionTwo == correctAnswer2) {
+    document.getElementById("correctAnswer2").style.display = "block";
+} else {
+    document.getElementById("wrongAnswer2").style.display = "block";
+}
+
+if (questionThree == correctAnswer3) {
+    document.getElementById("correctAnswer3").style.display = "block";
+} else {
+    document.getElementById("wrongAnswer3").style.display = "block";
+}
+*/
